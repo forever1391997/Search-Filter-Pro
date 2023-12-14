@@ -1,0 +1,8 @@
+function add_admin_scripts( $hook ) {
+
+    if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
+		wp_enqueue_script(  'acfInputScript', get_stylesheet_directory_uri().'/assets/js/acf-input.js' );
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'add_admin_scripts', 10, 1 );
